@@ -1,0 +1,8 @@
+# disable dpmd by pointing it to a non-existing file. Further service
+# definitions will be ignored and this one has to be included first.
+
+service dpmd /system/bin/dpmd_HYBRIS_DISABLED
+    class main
+    socket dpmd stream 0660 root system
+    socket tcm stream 0660 root inet
+    socket dpmwrapper stream 0660 root inet
